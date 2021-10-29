@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import Feed from './components/feed/feed';
 import Subreddits from './components/subreddits/Subreddit';
 
 function App() {
@@ -19,8 +20,8 @@ function App() {
       </div>
       </div>
       <div className = 'feed'>
-        {/*feed will be placed here */}
-        <p> feed will be placed here</p>
+        <Feed />
+        
       </div>
 
     </div>
