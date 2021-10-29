@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const subredditSlice = createSlice({
     name: 'subreddits',
     initialState: { subreddits: [
-        {data: {id:1,name: "home"}}
+        {data: {id:1,name: "Home"}},
+        {data: {id:1,name: "Memes"}}
     ]},
     reducer:{
         addSubreddit(state,action){
@@ -24,4 +25,4 @@ const subredditSlice = createSlice({
 
 export const {addSubreddit, removeSubreddit} = subredditSlice.actions;
 export const subredditsReducer = subredditSlice.reducer
-export const selectSubreddit = state => state.subreddits  
+export const selectSubreddit = state => state.subreddits.subreddits

@@ -1,0 +1,14 @@
+ul{
+    list-style: none;
+    font-family: Geneva, Tahoma, sans-serif;
+    color:gray;
+   
+    text-align: center;
+    
+}
+li:hover {
+    background-color:rgba(212, 193, 232, 0.5) ;
+}
+li {
+    text-align: center;
+}
