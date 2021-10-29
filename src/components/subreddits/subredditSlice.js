@@ -5,7 +5,10 @@ const subredditSlice = createSlice({
     initialState: { subreddits: [
         {data: {id:1,name: "Home"}},
         {data: {id:1,name: "Memes"}}
-    ]},
+    ],
+    error: false,
+    isLoading: false,
+    },
     reducer:{
         addSubreddit(state,action){
            return {
@@ -13,12 +16,8 @@ const subredditSlice = createSlice({
             subreddits: [...state.subreddits,action.payload]
            }
         },
-        removeSubreddit(state,action){
-            return{
-                ...state,
-                subreddits: state.subreddits.filter(sub => sub !== action.payload)
-            }
-        }
+        
+        
 
     }
 })
