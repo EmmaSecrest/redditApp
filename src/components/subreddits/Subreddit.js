@@ -11,7 +11,7 @@ export default function Subreddits(){
        <section >
             <ul className = 'subreddit-list'>
                {Object.values(subreddits).map(sub => (
-                   <li className = 'sub' key = {sub.data.id}>
+                   <li className = 'sub' key = {sub.data.id} id = 'sub'>
                        <h3>{sub.data.name}</h3>
                    </li>
 
