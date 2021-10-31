@@ -18,5 +18,6 @@ const feedSlice = createSlice({
     
     
 })
-
-export const selectFeed = state => state.feed.feed
+ // fix me 
+ export const feedReducer = feedSlice.reducer
+ export const selectFeed = state => state.feed.feed

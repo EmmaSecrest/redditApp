@@ -1,0 +1,25 @@
+.posts{
+    list-style: none;
+    font-family: Geneva, Tahoma, sans-serif;
+    color: rgb(2, 34, 23);
+    background-color: whitesmoke;
+    opacity: .7;
+    display: inline;
+    float: left;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding: 15% 20%;
+    padding-bottom: 20%;
+    padding-right: 40%;
+    
+    position: relative;
+    bottom: 55px ;
+}
+.feed {
+   
+    position: relative;
+    bottom: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+}

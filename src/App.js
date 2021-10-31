@@ -19,10 +19,10 @@ function App() {
         
       </div>
       </div>
-      <div className = 'feed'>
+      
         <Feed />
         
-      </div>
+      
 
     </div>
   );

@@ -8,10 +8,8 @@ export default function Subreddits(){
    const subreddits = useSelector(selectSubreddit)
 
    return  (
-       <section>
-           
-           
-           <ul className = 'subreddit-list'>
+       <section >
+            <ul className = 'subreddit-list'>
                {Object.values(subreddits).map(sub => (
                    <li className = 'sub' key = {sub.data.id}>
                        <h3>{sub.data.name}</h3>
