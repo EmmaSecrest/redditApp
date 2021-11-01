@@ -6,7 +6,8 @@ export const getPosts = createAsyncThunk('posts/getPosts',
 async () => {
     const res = await fetch(`https://www.reddit.com/hot.json`)
     const resJson = await res.json();
-    return resJson
+    
+    return resJson.data.children.map(post=> post.data);
 }
 )
 
@@ -16,6 +17,7 @@ async () => {
 const feedSlice = createSlice({
     name: 'feed',
     initialState: {
+        posts: [],
         feed: [
             // {data: {id:1 , subredditId:1,title: 'title 1' ,post: 'post 1'}},
             // {data: {id:2, subredditId:1, title: "title 2" ,post: 'post 2'}},
@@ -38,7 +40,10 @@ const feedSlice = createSlice({
       [getPosts.fulfilled](state,action){
           state.isLoading = false;
           state.error = false;
-          state.feed.push(action.payload)
+          state.posts = action.payload;
+         // not sure about this
+
+        //   state.feed.push(action.payload)
         
       }
     }
@@ -50,5 +55,5 @@ const feedSlice = createSlice({
  export const feedReducer = feedSlice.reducer
  export const isLoading = (state) => state.feed.isLoading
  export const feedError = (state) => state.feed.error
- export const selectFeed = state => state.feed.feed
+ export const selectFeed = state => state.feed.posts;
 

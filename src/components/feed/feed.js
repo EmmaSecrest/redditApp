@@ -12,21 +12,29 @@ export default function Feed() {
     // const subreddits = useSelector(selectSubreddit);
     const feed = useSelector(selectFeed);
     const dispatch = useDispatch()
-
-useEffect(() => {
-    if(feed){
-        dispatch(getPosts(feed.id))
-    }
-},[feed,dispatch])
-if(isLoading) return <div>Loading</div>
-if(!feed) return null; 
+//not sure about this
+    useEffect(() => {
+    
+        dispatch(getPosts())
+    
+},[dispatch])
+// if(isLoading) return <div>Loading</div>
+// if(!feed) return null; 
+    
     
     
     return (
+        
         <section>
+            
             <ul className = 'posts'>
-        {Object.values(feed).map(posts => (
-            <li className = 'feed' key = {posts.data.id}>
+        {feed.map((post, index) => (
+            <li className = 'feed'key = {index} >
+                <h2>{post.title}</h2>
+                <br/>
+                r/{post.subreddit}<br/>
+                {post.selftext? post.selftext: null}
+                {post.ups}
                 
             </li>
 

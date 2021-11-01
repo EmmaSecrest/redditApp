@@ -14,13 +14,17 @@ function App() {
       </nav>
       <div className = 'subreddit-containter'>
       <h2 className = "subs">Subreddits</h2>
-      <div className = 'subreddits'>
-        <Subreddits />
-        
-      </div>
+      <div className="content">
+      <Feed />
+      <Subreddits />
       </div>
       
-        <Feed />
+        
+        
+      
+      </div>
+      
+        
         
       
 

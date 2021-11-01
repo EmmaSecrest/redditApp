@@ -35,4 +35,7 @@ h1{
 }
 
 
-
+.content{
+  display:flex;
+  flex-direction: row;
+}
