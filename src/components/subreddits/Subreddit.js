@@ -4,6 +4,7 @@ import { selectSubreddit } from "./subredditSlice";
 import { useSelector } from "react-redux";
 import "./subreddits.css";
 
+
 export default function Subreddits(){
    const subreddits = useSelector(selectSubreddit)
 

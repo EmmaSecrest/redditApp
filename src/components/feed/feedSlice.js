@@ -38,8 +38,7 @@ const feedSlice = createSlice({
       [getPosts.fulfilled](state,action){
           state.isLoading = false;
           state.error = false;
-         alert(state.feed.feed)
-        state.feed.feed.push(action.payload)
+          state.feed.push(action.payload)
         
       }
     }

@@ -27,8 +27,7 @@ if(!feed) return null;
             <ul className = 'posts'>
         {Object.values(feed).map(posts => (
             <li className = 'feed' key = {posts.data.id}>
-                <h3>{posts.data.title}</h3>
-                <p>{posts.data.post}</p>
+                
             </li>
 
         ))}
