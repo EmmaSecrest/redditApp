@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Deep Dive</title>
+  <style></style><style>body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvaW5kZXguY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsU0FBUztFQUNUOztjQUVZO0VBQ1osbUNBQW1DO0VBQ25DLGtDQUFrQztBQUNwQzs7QUFFQTtFQUNFO2FBQ1c7QUFDYiIsInNvdXJjZXNDb250ZW50IjpbImJvZHkge1xuICBtYXJnaW46IDA7XG4gIGZvbnQtZmFtaWx5OiAtYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsICdTZWdvZSBVSScsICdSb2JvdG8nLCAnT3h5Z2VuJyxcbiAgICAnVWJ1bnR1JywgJ0NhbnRhcmVsbCcsICdGaXJhIFNhbnMnLCAnRHJvaWQgU2FucycsICdIZWx2ZXRpY2EgTmV1ZScsXG4gICAgc2Fucy1zZXJpZjtcbiAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBncmF5c2NhbGU7XG59XG5cbmNvZGUge1xuICBmb250LWZhbWlseTogc291cmNlLWNvZGUtcHJvLCBNZW5sbywgTW9uYWNvLCBDb25zb2xhcywgJ0NvdXJpZXIgTmV3JyxcbiAgICBtb25vc3BhY2U7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.App {
+  
+  background-image: url(/static/media/mermaidBackground.8a1c73ed.jpeg);
+  background-size: cover;
+  background-position: top;
+  min-height: 100%;
+  height: 150vh;
+  position: relative;
+}
+
+
+
+.textBackground{
+   
+   background-image: linear-gradient(0deg, rgba(35,207,180,1) 0%, rgba(151,45,253,1) 100%);
+   -webkit-background-clip: text;
+           background-clip: text;
+   color: transparent;
+   /* padding-top: 1%; */
+   margin-top: 1%;
+}
+h1{
+  font-size: 80px;
+  font-family: "Brush Script MT";
+  text-align: center;
+}
+.subs {
+  
+  position: absolute;
+  right: 4%;
+  top: 10% ;
+  background-image: linear-gradient(0deg, rgba(35,207,180,1) 0%, rgba(151,45,253,1) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  font-size: 40px;
+  font-family: Cursive;
+}
+
+
+/* .content{
+  display:flex;
+  flex-direction: row;
+} */
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvQXBwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7RUFFRSx5REFBNEQ7RUFDNUQsc0JBQXNCO0VBQ3RCLHdCQUF3QjtFQUN4QixnQkFBZ0I7RUFDaEIsYUFBYTtFQUNiLGtCQUFrQjtBQUNwQjs7OztBQUlBOztHQUVHLHVGQUF1RjtHQUN2Riw2QkFBcUI7V0FBckIscUJBQXFCO0dBQ3JCLGtCQUFrQjtHQUNsQixxQkFBcUI7R0FDckIsY0FBYztBQUNqQjtBQUNBO0VBQ0UsZUFBZTtFQUNmLDhCQUE4QjtFQUM5QixrQkFBa0I7QUFDcEI7QUFDQTs7RUFFRSxrQkFBa0I7RUFDbEIsU0FBUztFQUNULFNBQVM7RUFDVCx1RkFBdUY7RUFDdkYsNkJBQXFCO1VBQXJCLHFCQUFxQjtFQUNyQixrQkFBa0I7RUFDbEIsZUFBZTtFQUNmLG9CQUFvQjtBQUN0Qjs7O0FBR0E7OztHQUdHIiwic291cmNlc0NvbnRlbnQiOlsiLkFwcCB7XG4gIFxuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4vcmVzb3VyY2VzL21lcm1haWRCYWNrZ3JvdW5kLmpwZWcnKSA7XG4gIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gIGJhY2tncm91bmQtcG9zaXRpb246IHRvcDtcbiAgbWluLWhlaWdodDogMTAwJTtcbiAgaGVpZ2h0OiAxNTB2aDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG5cblxuLnRleHRCYWNrZ3JvdW5ke1xuICAgXG4gICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoMGRlZywgcmdiYSgzNSwyMDcsMTgwLDEpIDAlLCByZ2JhKDE1MSw0NSwyNTMsMSkgMTAwJSk7XG4gICBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7XG4gICBjb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAvKiBwYWRkaW5nLXRvcDogMSU7ICovXG4gICBtYXJnaW4tdG9wOiAxJTtcbn1cbmgxe1xuICBmb250LXNpemU6IDgwcHg7XG4gIGZvbnQtZmFtaWx5OiBcIkJydXNoIFNjcmlwdCBNVFwiO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4uc3VicyB7XG4gIFxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiA0JTtcbiAgdG9wOiAxMCUgO1xuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoMGRlZywgcmdiYSgzNSwyMDcsMTgwLDEpIDAlLCByZ2JhKDE1MSw0NSwyNTMsMSkgMTAwJSk7XG4gIGJhY2tncm91bmQtY2xpcDogdGV4dDtcbiAgY29sb3I6IHRyYW5zcGFyZW50O1xuICBmb250LXNpemU6IDQwcHg7XG4gIGZvbnQtZmFtaWx5OiBDdXJzaXZlO1xufVxuXG5cbi8qIC5jb250ZW50e1xuICBkaXNwbGF5OmZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XG59ICovXG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.posts{
+    list-style: none;
+    font-family: Geneva, Tahoma, sans-serif;
+    color: rgb(10, 78, 54);
+    background-color: whitesmoke;
+    opacity: 0.8;
+    max-height: 700px;
+   overflow: scroll;
+    max-width: 1000px;
+    margin-left: 2%;
+}
+.feed {
+   
+    border:rgb(175, 45, 164) 1.5px solid ;
+    margin-bottom: 2%;
+    /* padding-left: px;
+    padding-right: 40px; */
+
+}
+.bottom-inline{
+    display: inline-flex;
+    justify-content: space-around;
+    border: springgreen 1px solid;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9mZWVkL2ZlZWQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLHVDQUF1QztJQUN2QyxzQkFBc0I7SUFDdEIsNEJBQTRCO0lBQzVCLFlBQVk7SUFDWixpQkFBaUI7R0FDbEIsZ0JBQWdCO0lBQ2YsaUJBQWlCO0lBQ2pCLGVBQWU7QUFDbkI7QUFDQTs7SUFFSSxxQ0FBcUM7SUFDckMsaUJBQWlCO0lBQ2pCOzBCQUNzQjs7QUFFMUI7QUFDQTtJQUNJLG9CQUFvQjtJQUNwQiw2QkFBNkI7SUFDN0IsNkJBQTZCO0FBQ2pDIiwic291cmNlc0NvbnRlbnQiOlsiLnBvc3Rze1xuICAgIGxpc3Qtc3R5bGU6IG5vbmU7XG4gICAgZm9udC1mYW1pbHk6IEdlbmV2YSwgVGFob21hLCBzYW5zLXNlcmlmO1xuICAgIGNvbG9yOiByZ2IoMTAsIDc4LCA1NCk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGVzbW9rZTtcbiAgICBvcGFjaXR5OiAwLjg7XG4gICAgbWF4LWhlaWdodDogNzAwcHg7XG4gICBvdmVyZmxvdzogc2Nyb2xsO1xuICAgIG1heC13aWR0aDogMTAwMHB4O1xuICAgIG1hcmdpbi1sZWZ0OiAyJTtcbn1cbi5mZWVkIHtcbiAgIFxuICAgIGJvcmRlcjpyZ2IoMTc1LCA0NSwgMTY0KSAxLjVweCBzb2xpZCA7XG4gICAgbWFyZ2luLWJvdHRvbTogMiU7XG4gICAgLyogcGFkZGluZy1sZWZ0OiBweDtcbiAgICBwYWRkaW5nLXJpZ2h0OiA0MHB4OyAqL1xuXG59XG4uYm90dG9tLWlubGluZXtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcbiAgICBib3JkZXI6IHNwcmluZ2dyZWVuIDFweCBzb2xpZDtcbn0iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.subreddit-list {
+    list-style: none;
+    font-family: Geneva, Tahoma, sans-serif;
+    color:gray;
+    text-align: center;
+    background-color: whitesmoke;
+    float:right;
+    margin-top: 5%;
+    margin-right: 1%;
+    padding: 10% 5% ;
+    padding-bottom: 25%;
+    opacity: .7;
+    position: relative;
+    bottom: 750px;
+    
+}
+.sub:hover{
+    background-color:rgba(212, 193, 232, 0.6) ;
+}
+.sub {
+    
+   
+    padding-left: 30px;
+    padding-right: 30px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9zdWJyZWRkaXRzL3N1YnJlZGRpdHMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLHVDQUF1QztJQUN2QyxVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLDRCQUE0QjtJQUM1QixXQUFXO0lBQ1gsY0FBYztJQUNkLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsbUJBQW1CO0lBQ25CLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIsYUFBYTs7QUFFakI7QUFDQTtJQUNJLDBDQUEwQztBQUM5QztBQUNBOzs7SUFHSSxrQkFBa0I7SUFDbEIsbUJBQW1CO0FBQ3ZCIiwic291cmNlc0NvbnRlbnQiOlsiLnN1YnJlZGRpdC1saXN0IHtcbiAgICBsaXN0LXN0eWxlOiBub25lO1xuICAgIGZvbnQtZmFtaWx5OiBHZW5ldmEsIFRhaG9tYSwgc2Fucy1zZXJpZjtcbiAgICBjb2xvcjpncmF5O1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZXNtb2tlO1xuICAgIGZsb2F0OnJpZ2h0O1xuICAgIG1hcmdpbi10b3A6IDUlO1xuICAgIG1hcmdpbi1yaWdodDogMSU7XG4gICAgcGFkZGluZzogMTAlIDUlIDtcbiAgICBwYWRkaW5nLWJvdHRvbTogMjUlO1xuICAgIG9wYWNpdHk6IC43O1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBib3R0b206IDc1MHB4O1xuICAgIFxufVxuLnN1Yjpob3ZlcntcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYmEoMjEyLCAxOTMsIDIzMiwgMC42KSA7XG59XG4uc3ViIHtcbiAgICBcbiAgIFxuICAgIHBhZGRpbmctbGVmdDogMzBweDtcbiAgICBwYWRkaW5nLXJpZ2h0OiAzMHB4O1xufSJdLCJzb3VyY2VSb290IjoiIn0= */</style><script async="" src="./Deep Dive_files/adblocker-chromeglobalinjectjs.js"></script><script charset="utf-8" src="./Deep Dive_files/main.068c6b6b3e516346dccf.hot-update.js"></script><script charset="utf-8" src="./Deep Dive_files/main.8cfa02013a613744ebb5.hot-update.js"></script><script charset="utf-8" src="./Deep Dive_files/main.7063c4e58d785618e5db.hot-update.js"></script></head>
+  <body data-new-gr-c-s-check-loaded="14.1036.0" data-gr-ext-installed=""><div id="i4c-draggable-container" style="position: fixed; z-index: 1499; width: 0px; height: 0px;"><div data-reactroot="" class="resolved" style="all: initial;"></div></div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><nav><div class="textBackground"><h1>Deep Dive</h1></div></nav><div class="subreddit-containter"><h2 class="subs">Subreddits</h2><div class="content"><section><ul class="posts"><li class="feed"><h2>What brand is overpriced / not worth the money?</h2><br>r/AskReddit<br> <br><div class="bottom-inline">Upvotes:21377<a>Comments</a></div></li><li class="feed"><h2>2021 Predictions Tournament</h2><br>r/formula1<br> <br><div class="bottom-inline">Upvotes:133525<a>Comments</a></div></li><li class="feed"><h2>This guy says Critical Race Theory is the most important issue in the Virginia Election. He also has no idea what Critical Race Theory is.</h2><br>r/PublicFreakout<br> <br><div class="bottom-inline">Upvotes:40308<a>Comments</a></div></li><li class="feed"><h2>And that's how I met your mother...</h2><br>r/Unexpected<br> <br><div class="bottom-inline">Upvotes:51927<a>Comments</a></div></li><li class="feed"><h2>Woman reaches into purse, accidentally fires gun at Madison basketball game</h2><br>r/news<br> <br><div class="bottom-inline">Upvotes:13393<a>Comments</a></div></li><li class="feed"><h2>Efficient Trick or Treat</h2><br>r/nextfuckinglevel<br> <br><div class="bottom-inline">Upvotes:56481<a>Comments</a></div></li><li class="feed"><h2>Vented to my gf about work yesterday...Still can't believe I was suspended from my job for addressing a human by their name instead of "sir".</h2><br>r/antiwork<br>Suspended for "failure to follow policies and procedures". GTFOOH!  The best part is "David" literally told me "someone like you doesn't call me by my name. It's sir. We are not drinking buddies."
+
+This people. This is why I'm over it. So tired of being treated as a-lesser human. I refuse to be subservient. Screw that!  
+
+Happy Tuesday friends! <br><div class="bottom-inline">Upvotes:30247<a>Comments</a></div></li><li class="feed"><h2>Man Picks up an Opposum and knows super cool facts about them</h2><br>r/Damnthatsinteresting<br> <br><div class="bottom-inline">Upvotes:22364<a>Comments</a></div></li><li class="feed"><h2>This lady got pissed because I honked when she almost hit my car, proceeded to brake check me 3 times, cut me off sideways, spit on my car, and do this…</h2><br>r/IdiotsInCars<br> <br><div class="bottom-inline">Upvotes:52966<a>Comments</a></div></li><li class="feed"><h2>An orange-colored alligator in South Carolina. Most likely, according to an official, this alligator overwintered in a rusty steel culvert and became dyed by the iron oxide contained in the water around its body. It will lose this coloration once it molts.</h2><br>r/natureismetal<br> <br><div class="bottom-inline">Upvotes:12956<a>Comments</a></div></li><li class="feed"><h2>A little late but me as Sam Halloween</h2><br>r/marvelstudios<br> <br><div class="bottom-inline">Upvotes:17470<a>Comments</a></div></li><li class="feed"><h2>[GIVEAWAY] Razer x Halo Legendary Giveaway</h2><br>r/halo<br>&amp;amp;#x200B;
+
+https://preview.redd.it/yeupm1e4f6x71.png?width=1200&amp;amp;format=png&amp;amp;auto=webp&amp;amp;s=7f26098e50cf6537a2ed01862895e6a0b3de2083
+
+Hi everyone!
+
+A few weeks ago, during RazerCon 2021, we announced our legendary #RazerAMDHalo giveaway. For this giveaway we’ve partnered up with AMD and Halo to give away a few AMD Radeon™ RX 6900 XT Halo Infinite Limited Edition Graphics Card plus a 3-month Xbox Game Pass for PC.
+
+Every day until Nov 15th we’ll unveil a new task to complete for chance to win. Today’s mission takes place here and the task at hand is simple: **Share with us your favorite Halo multiplayer moment.**
+
+Winners will be selected randomly. Giveaway ends today at 23:59 PT. GL HF.
+
+For more chances to win and to keep up with our daily task, visit: [https://rzr.to/halo-giveaway](https://apc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Frzr.to%2Fhalo-giveaway&amp;amp;data=04%7C01%7CJustin.Toledo%40razer.com%7C48e7cbfba2934e1c530408d99ce4db1b%7Cfdadce6e7f5e49db8f226a87331a9135%7C0%7C0%7C637713329354608484%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;amp;sdata=75IAC9brxayfxfUlFBAPosc1SUHZJ%2Fi3EKKEy6Ty3Ys%3D&amp;amp;reserved=0) and keep a close eye on the daily giveaway calendar. Every day there will be a new task which means an extra chance at scoring one of the exclusive AMD Radeon™ RX 6900 XT Halo Infinite Limited Edition Graphics Cards. <br><div class="bottom-inline">Upvotes:1284<a>Comments</a></div></li><li class="feed"><h2>Outrage as 400 VIP jets converge on Glasgow for global warming summit</h2><br>r/worldnews<br> <br><div class="bottom-inline">Upvotes:34372<a>Comments</a></div></li><li class="feed"><h2>One Piece chapter 1031 spoilers</h2><br>r/OnePiece<br>[Korean source](https://gall.dcinside.com/mgallery/board/view/?id=onepieceblood&amp;amp;no=845528&amp;amp;page=1)
+
+Brief summary, thanks to Redon
+
+Title- **"The warrior of science"**
+
+*- The awakening of the Devil Fruits is a "gift".*
+
+*- Law asks Kid how much magnetism he can give but Kid does not answer.*
+
+*- Big Mom uses 1 year of her life expectancy on herself to become stronger and bigger.*
+
+*- She also gives life to several Homies, including Napoleon.*
+
+*- Drake declines Apoo's invitation.*
+
+*- Yamato breaks into the place where they are and the Numbers "Fuga" goes after Yamato.*
+
+*- The CP0 arrives where Robin and Brook are, to capture Robin.*
+
+*- The spies who wear masks are on another level from the rest.*
+
+*- Sanji is with a woman who has been attacked, it seems that he has done it but he is confused.*
+
+*- Sanji wonders if it is because of the germa's powers, and believes that he can become someone like his brothers who do not hesitate to attack women.*
+
+*- Sanji takes out the Raid Suit and seemingly destroys it*
+
+*- Sanji talks to Zoro on a Den Den Mushi and asks him, if he goes crazy or loses his mind, to finish him off after the battle against Kaidou's army.*
+
+*- Sanji attacks Queen with an attack called "Hell Memories". -*
+
+[Sanji vs Queen](https://preview.redd.it/f044lgm516x71.png?width=510&amp;amp;format=png&amp;amp;auto=webp&amp;amp;s=5b11a814ac3aa3f07add139198ef606197d61a6b)
+
+**BREAK NEXT WEEK** <br><div class="bottom-inline">Upvotes:3339<a>Comments</a></div></li><li class="feed"><h2>This is Fall in Upstate NY...I would argue the best place to experience fall! [OC][1365x2048]</h2><br>r/EarthPorn<br> <br><div class="bottom-inline">Upvotes:15808<a>Comments</a></div></li><li class="feed"><h2>Dog being chased</h2><br>r/funny<br> <br><div class="bottom-inline">Upvotes:33617<a>Comments</a></div></li><li class="feed"><h2>A microwave cookbook for lonely people</h2><br>r/mildlyinteresting<br> <br><div class="bottom-inline">Upvotes:11681<a>Comments</a></div></li><li class="feed"><h2>The fake 'ad' Joe Rogan fell for, from AUS satirical television show Gruen in HD.</h2><br>r/videos<br> <br><div class="bottom-inline">Upvotes:8216<a>Comments</a></div></li><li class="feed"><h2>I love the nanny state but this is a little much</h2><br>r/WhitePeopleTwitter<br> <br><div class="bottom-inline">Upvotes:37922<a>Comments</a></div></li><li class="feed"><h2>Texas Special Teams Coach Jeff Banks’ monkey allegedly attacked and seriously hurt a young trick-or-treater last night</h2><br>r/CFB<br>[Source](https://twitter.com/thomasgcampbell/status/1455308414607892485?s=21)
+
+**Update:** [There is more](https://twitter.com/mottthunder2/status/1350180670811811841?s=21). Banks apparently left his wife and kids to be with a stripper named Pole Assassin and the monkey is hers and a part of her act.
+
+**Update 2:** [Pole Assassin confirms that a child was bitten](https://twitter.com/dani_andjb/status/1455356780767322112?s=21). Denies it was serious, but does confirm that the monkey did bite a child
+
+[Here](https://i.imgur.com/0qj08H9.jpg) is a screenshot containing the tweet and some context.
+
+**Update 3:** [Pole Assassin says the monkey is an emotional support monkey](https://twitter.com/dani_andjb/status/1455358038232215553?s=21)
+
+[Here](https://i.imgur.com/CJBIbf5.jpg) is a screenshot of this tweet. You can see more context for this response in Update 9.
+
+**Update 4:** [According to TexAgs, Pole Assassin tweets at croots](https://texags.com/forums/5/topics/3215040). There is screenshots for proof too, so it’s not a baseless claim.
+
+**Update 5:** [More tweets, this time with a video explaining what happened with a walkthrough of the yard](https://twitter.com/dani_andjb/status/1455371120023060484?s=20). Waiting to see if we hear anything from Banks or not. 
+
+[PFT commenter has this mirrored since it was deleted](https://twitter.com/pftcommenter/status/1455381489600897026?s=21)
+
+**Update 6:** The video/tweet in update 5 has been deleted
+
+**Update 7:** Her entire twitter account has been deleted
+
+**Update 8:** It appears the monkeys name is Gia and has an instagram account, that account is still active but I believe due to sub rules I cannot post links to it. [Here’s a quote tweet about it, however.](https://twitter.com/bunkieperkins/status/1455350719523999754?s=21)
+
+**Update 9:** Earlier, when she was still tweeting, Pole Assassin evidently confirmed the monkey was vaccinated and up to date on it’s shots, which is a positive for the child. 
+
+[Here](https://i.imgur.com/barLXto.jpg) is a screenshot of this confirmation, it also goes hand in hand with Update 3 <br><div class="bottom-inline">Upvotes:9230<a>Comments</a></div></li><li class="feed"><h2>Tom only cares about Tom</h2><br>r/lotrmemes<br> <br><div class="bottom-inline">Upvotes:23051<a>Comments</a></div></li><li class="feed"><h2>Ready for No Nestle November?</h2><br>r/coolguides<br> <br><div class="bottom-inline">Upvotes:27833<a>Comments</a></div></li><li class="feed"><h2>TV More Fun</h2><br>r/BikiniBottomTwitter<br> <br><div class="bottom-inline">Upvotes:12022<a>Comments</a></div></li><li class="feed"><h2>Cursed_TinkyWinky</h2><br>r/cursedcomments<br> <br><div class="bottom-inline">Upvotes:27131<a>Comments</a></div></li><li class="feed"><h2>[Grenham] Marcus Smart: "I would just like to play basketball. Every team knows we're trying to go to Jayson and Jaylen. Every team is programmed and studied to stop Jayson and Jaylen. I think everybody's scouting report is to make those guys pass the ball. They don't want to pass the ball</h2><br>r/nba<br>&amp;gt;Marcus Smart: "I would just like to play basketball. Every team knows we're trying to go to Jayson and Jaylen. Every team is programmed and studied to stop Jayson and Jaylen. I think everybody's scouting report is to make those guys pass the ball. They don't want to pass the ball.
+
+https://twitter.com/chrisgrenham/status/1455361676706992131?s=21
+
+Whew lad… that’s a spicy fucking meatball. <br><div class="bottom-inline">Upvotes:8567<a>Comments</a></div></li></ul></section><section><ul class="subreddit-list"><li class="sub" id="sub"><h3>Home</h3></li><li class="sub" id="sub"><h3>Memes</h3></li></ul></section></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./Deep Dive_files/bundle.js"></script><script src="./Deep Dive_files/vendors_main.chunk.js"></script><script src="./Deep Dive_files/main.chunk.js"></script>
+
+<div id="i4c-dialogs-container"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

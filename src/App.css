@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  
   background-image: url('./resources/mermaidBackground.jpeg') ;
   background-size: cover;
   background-position: top;
@@ -21,6 +21,7 @@
 h1{
   font-size: 80px;
   font-family: "Brush Script MT";
+  text-align: center;
 }
 .subs {
   
@@ -35,7 +36,7 @@ h1{
 }
 
 
-.content{
+/* .content{
   display:flex;
   flex-direction: row;
-}
+} */

@@ -5,7 +5,7 @@ import { selectFeed } from "./feedSlice";
 import { getPosts } from "./feedSlice";
 // import {selectSubreddit, subredditsReducer} from '../subreddits/subredditSlice'
 import "./feed.css"
-import { isLoading } from "./feedSlice";
+// import { isLoading } from "./feedSlice";
 // import Subreddits from "../subreddits/Subreddit";
 
 export default function Feed() {
@@ -17,25 +17,60 @@ export default function Feed() {
     
         dispatch(getPosts())
     
-},[dispatch])
+})
+
 // if(isLoading) return <div>Loading</div>
 // if(!feed) return null; 
-    
-    
-    
+
+function commentClick(){
+    return (
+        <ul className = 'comments'>
+        {feed[1].data.children[0].data.replies.data.children.map(post => (<li className = 'comment' key = {post.data.body}>
+        {post.data.body}
+        </li>))}
+    </ul>
+    )
+ } 
+
+
     return (
         
         <section>
-            
+
             <ul className = 'posts'>
         {feed.map((post, index) => (
             <li className = 'feed'key = {index} >
-                <h2>{post.title}</h2>
-                <br/>
                 r/{post.subreddit}<br/>
-                {post.selftext? post.selftext: null}
-                {post.ups}
+                <h2>{post.title}</h2>
+                {/*less of a space here */}
+                u/{post.author_fullname} <br />
+                {post.selftext? post.selftext: null} <br/>
+                {post.url? <a href = {post.url} className ='link'>Click me!</a>:null}
                 
+                { post.post_hint === 'image' &&           
+                  <img 
+                  alt = ''
+                  src = {post.url}
+                  className = 'image'
+                />
+                }
+                { post.post_hint === 'video' &&           
+                  <video
+                  alt = ''
+                  src = {post.videoUrl}
+                  className = 'image'
+                  controls
+                  autoPlay
+                > video is not supported </video>
+                }
+
+
+                <div className = 'bottom-inline'>
+                Upvotes:{post.ups}
+                <button onClick ={commentClick}>Comments</button>
+                </div>
+
+
             </li>
 
         ))}

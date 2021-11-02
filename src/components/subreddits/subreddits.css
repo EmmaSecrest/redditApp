@@ -2,10 +2,7 @@
     list-style: none;
     font-family: Geneva, Tahoma, sans-serif;
     color:gray;
-   
     text-align: center;
-
-    
     background-color: whitesmoke;
     float:right;
     margin-top: 5%;
@@ -13,8 +10,8 @@
     padding: 10% 5% ;
     padding-bottom: 25%;
     opacity: .7;
-
-    
+    position: relative;
+    bottom: 750px;
     
 }
 .sub:hover{
@@ -22,8 +19,7 @@
 }
 .sub {
     
-    position: relative;
-    bottom: 70px;
+   
     padding-left: 30px;
     padding-right: 30px;
 }

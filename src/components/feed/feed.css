@@ -1,24 +1,38 @@
 .posts{
     list-style: none;
     font-family: Geneva, Tahoma, sans-serif;
-    color: rgb(2, 34, 23);
+    color: rgb(10, 78, 54);
     background-color: whitesmoke;
-    opacity: .7;
-    display: inline;
-    float: left;
-    margin-top: 5%;
-    margin-left: 5%;
-    padding: 15% 20%;
-    padding-bottom: 20%;
-    padding-right: 40%;
-    position: relative;
-    bottom: 55px ;
+    opacity: 0.8;
+    max-height: 700px;
+   overflow: scroll;
+    max-width: 1000px;
+    margin-left: 2%;
+    text-align: center;
+    border:blueviolet 1px solid;
 }
 .feed {
    
-    position: relative;
-    bottom: 80px;
-    padding-left: 40px;
-    padding-right: 40px;
+    border:rgb(175, 45, 164) 1.5px solid ;
+    margin-bottom: 2%;
+    
 
+}
+.bottom-inline{
+   text-align: center;
+    display: flex;
+    justify-content: space-around;
+   
+    
+}
+.image{
+    max-height: 500px;
+    border: black 1px solid;
+    margin-left: 10%;
+}
+ .link {
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(23, 165, 130);
+    font-weight: 600;
 }
