@@ -17,7 +17,7 @@ export default function Feed() {
     
         dispatch(getPosts())
     
-})
+},[dispatch])
 
 // if(isLoading) return <div>Loading</div>
 // if(!feed) return null; 
