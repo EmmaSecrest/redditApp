@@ -12,20 +12,20 @@ import { getSubredditPosts } from "../feed/feedSlice";
 
 export default function Subreddits(){
    const subreddits = useSelector(selectSubreddit)
-   const dispatch = useDispatch()
+//    const dispatch = useDispatch()
    
    // try const subredditClick equal to an useEffect
-   const subredditClick = function () {
-        alert('on Click works!')
-        dispatch(getSubredditPosts())
-   }
+//    const subredditClick = function () {
+//         alert('on Click works!')
+//         dispatch(getSubredditPosts())
+//    }
 
    return  (
        <section >
             <ul className = 'subreddit-list'>
                {Object.values(subreddits).map(sub => (
                    <li className = 'sub' key = {sub.data.id} id = 'sub'>
-                       <h3 className = 'subredditName' onClick = {subredditClick}>{sub.data.name}</h3>
+                       <h3 className = 'subredditName' >{sub.data.name}</h3>
                    </li>
 
                ))}
