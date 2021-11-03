@@ -5,6 +5,7 @@ import { selectFeed } from "./feedSlice";
 import { getPosts } from "./feedSlice";
 // import {selectSubreddit, subredditsReducer} from '../subreddits/subredditSlice'
 import "./feed.css"
+import '../subreddits/Subreddit'
 // import { isLoading } from "./feedSlice";
 // import Subreddits from "../subreddits/Subreddit";
 
@@ -12,24 +13,23 @@ export default function Feed() {
     // const subreddits = useSelector(selectSubreddit);
     const feed = useSelector(selectFeed);
     const dispatch = useDispatch()
-//not sure about this
+
+    
+    
     useEffect(() => {
     
         dispatch(getPosts())
     
 },[dispatch])
 
+
+
 // if(isLoading) return <div>Loading</div>
 // if(!feed) return null; 
 
+
 function commentClick(){
-    return (
-        <ul className = 'comments'>
-        {feed[1].data.children[0].data.replies.data.children.map(post => (<li className = 'comment' key = {post.data.body}>
-        {post.data.body}
-        </li>))}
-    </ul>
-    )
+   //place a use effect here for comments
  } 
 
 

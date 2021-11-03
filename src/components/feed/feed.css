@@ -4,17 +4,20 @@
     color: rgb(10, 78, 54);
     background-color: whitesmoke;
     opacity: 0.8;
-    max-height: 700px;
+    max-height: 900px;
    overflow: scroll;
-    max-width: 1000px;
+    max-width: 1300px;
     margin-left: 2%;
     text-align: center;
-    border:blueviolet 1px solid;
+    padding-bottom: 2%;
+    
 }
 .feed {
    
     border:rgb(175, 45, 164) 1.5px solid ;
+    margin-top: 1%;
     margin-bottom: 2%;
+    padding-bottom: 2%;
     
 
 }
@@ -29,6 +32,7 @@
     max-height: 500px;
     border: black 1px solid;
     margin-left: 10%;
+    max-width: 300px;
 }
  .link {
     text-decoration: none;
