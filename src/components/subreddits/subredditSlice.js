@@ -7,8 +7,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const subredditSlice = createSlice({
     name: 'subreddits',
     initialState: { subreddits: [
-        {data: {id:1,name: "Home", search:'hot'}},
-        {data: {id:1,name: "Memes", search: 'memes'}},
+        {data: {id:1,name: "Home", search:'news'}},
+        {data: {id:2,name: "Memes", search: 'memes'}},
         {data:{id:3,name:"Ask Reddit",search: 'AskReddit'}},
         {data:{id:4, name: 'Aww',search:'aww'}},
         {data:{id:5, name:'Funny', search: 'funny'}},
@@ -31,7 +31,7 @@ const subredditSlice = createSlice({
     ],
     error: false,
     isLoading: false,
-    selectedSubreddit:{data: {id:1,name: "Home", search:'hot'}}
+    selectedSubreddit:{data: {id:0,name: "Home", search:'news'}}
 
     },
     reducers:{
