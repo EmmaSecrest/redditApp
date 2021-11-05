@@ -34,13 +34,16 @@ const subredditSlice = createSlice({
     },
     reducers:{
         addSubreddit(state,action){
-           // might need to change this, can mutate state
-           state.subreddits.push(action.payload)
+           // may need to be adjusted 
+            state.subreddits.push(action.payload)
+        },
+        selectSubredditUpdated(state,action){
+            state.subreddit = action.payload
         }
     },
     
 })
 
-export const {addSubreddit, removeSubreddit} = subredditSlice.actions;
+export const {addSubreddit, selectSubredditUpdated } = subredditSlice.actions;
 export const subredditsReducer = subredditSlice.reducer
 export const selectSubreddit = state => state.subreddits.subreddits
