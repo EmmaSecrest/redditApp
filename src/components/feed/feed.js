@@ -15,14 +15,16 @@ export default function Feed() {
     // const subreddits = useSelector(selectSubreddit);
     const feed = useSelector(selectFeed);
     const dispatch = useDispatch()
+    const selectedSubreddit = useSelector(selectSelectedSubreddit)
 
   
     
     useEffect(() => {
     
-        dispatch(getPosts(selectSelectedSubreddit))
+        console.log(`activating useEffect` + selectedSubreddit)
+        dispatch(getPosts(selectedSubreddit))
     
-    },[dispatch])
+    },[dispatch, selectedSubreddit])
 
 
 

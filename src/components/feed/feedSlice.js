@@ -1,15 +1,16 @@
 // import React from "react"
 import { createSlice , createAsyncThunk } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
-import { selectSubreddit , selectSubredditUpdated } from "../subreddits/subredditSlice";
+
 
 
 export const getPosts = createAsyncThunk('posts/getPosts', 
 async (argument) => {
     let res 
-    if (argument !== null){
-         res = await fetch(`https://www.reddit.com/r/${argument}.json`)     
+    if (!argument){
+        // alert('something was Clicked') 
+        res = await fetch(`https://www.reddit.com/r/${argument}.json`)     
      } else {
+        // alert('default chosen')
         res = await fetch(`https://www.reddit.com/hot.json`)
      }
     
@@ -30,12 +31,7 @@ async () => {
 }
 )
 
-const subredditPosts = createAsyncThunk('posts/getSubredditPosts', async (category) => {
-    const subreddits = selectSubredditUpdated(category)
-    const res = await fetch(`https://www.reddit.com/r/${subreddits.data.search}.json`)
-    const resJson = await res.json();
-    return resJson.data.children.map(post=> post.data);
-})
+
 
 
 const feedSlice = createSlice({
@@ -66,19 +62,7 @@ const feedSlice = createSlice({
           state.error = false;
           state.posts = action.payload;
         },
-        [subredditPosts.pending](state,action){
-            state.isLoading = true;
-            state.error = false;
-        },
-        [subredditPosts.rejected](state,action){
-            state.isLoading = false;
-            state.error = true;
-        },
-        [subredditPosts.fulfilled](state,action){
-            state.isLoading = false
-            state.error = false
-            state.posts = action.payload;
-        }
+       
       //add an extra reducer for the comments
     }
     
@@ -90,6 +74,6 @@ const feedSlice = createSlice({
  export const isLoading = (state) => state.feed.isLoading
  export const feedError = (state) => state.feed.error
  export const selectFeed = state => state.feed.posts;
- export const getSubredditPosts = subredditPosts;
+ 
 
 
