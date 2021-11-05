@@ -6,17 +6,12 @@ import { createSlice , createAsyncThunk } from "@reduxjs/toolkit";
 export const getPosts = createAsyncThunk('posts/getPosts', 
 async (argument) => {
     let res 
-    if (!argument){
+   
         // alert('something was Clicked') 
         res = await fetch(`https://www.reddit.com/r/${argument}.json`)     
-     } else {
+     
         // alert('default chosen')
-        res = await fetch(`https://www.reddit.com/hot.json`)
-     }
-    
-    
-    
-    const resJson = await res.json();
+        const resJson = await res.json();
     
     return resJson.data.children.map(post=> post.data);
 }

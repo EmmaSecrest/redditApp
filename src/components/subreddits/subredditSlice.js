@@ -31,6 +31,8 @@ const subredditSlice = createSlice({
     ],
     error: false,
     isLoading: false,
+    selectedSubreddit:{data: {id:1,name: "Home", search:'hot'}}
+
     },
     reducers:{
         addSubreddit(state,action){
@@ -47,4 +49,4 @@ const subredditSlice = createSlice({
 export const {addSubreddit, selectSubredditUpdated } = subredditSlice.actions;
 export const subredditsReducer = subredditSlice.reducer
 export const selectSubreddit = state => state.subreddits.subreddits
-export const selectSelectedSubreddit = state => state.subreddits.subreddits.selectSubreddit
+export const selectSelectedSubreddit = state => state.subreddits.selectedSubreddit
