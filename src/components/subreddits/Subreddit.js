@@ -1,7 +1,8 @@
 
-import { selectSubreddit , selectSubredditUpdated } from "./subredditSlice";
+import { selectSubreddit ,  } from "./subredditSlice";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { getSubredditPosts } from "../feed/feedSlice";
 import "./subreddits.css";
 
 
@@ -15,7 +16,7 @@ export default function Subreddits(){
     const dispatch = useDispatch()
     const subredditClick = function (category){
         alert(`onClick works! you clicked on ${category}`)
-        dispatch(selectSubredditUpdated(category))
+        dispatch(getSubredditPosts(category))
     }
 
 
