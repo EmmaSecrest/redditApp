@@ -38,7 +38,7 @@ const subredditSlice = createSlice({
             state.subreddits.push(action.payload)
         },
         selectSubredditUpdated(state,action){
-            state.subreddit = action.payload
+            state.selectedSubreddit = action.payload
         }
     },
     
@@ -47,3 +47,4 @@ const subredditSlice = createSlice({
 export const {addSubreddit, selectSubredditUpdated } = subredditSlice.actions;
 export const subredditsReducer = subredditSlice.reducer
 export const selectSubreddit = state => state.subreddits.subreddits
+export const selectSelectedSubreddit = state => state.subreddits.subreddits.selectSubreddit

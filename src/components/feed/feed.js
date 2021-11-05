@@ -6,23 +6,21 @@ import { getPosts } from "./feedSlice";
 // import {selectSubreddit, subredditsReducer} from '../subreddits/subredditSlice'
 import "./feed.css"
 import '../subreddits/Subreddit'
-import { getSubredditPosts } from "../feed/feedSlice";
+import { selectSelectedSubreddit } from "../subreddits/subredditSlice";
 // import { isLoading } from "./feedSlice";
 // import Subreddits from "../subreddits/Subreddit";
+
 
 export default function Feed() {
     // const subreddits = useSelector(selectSubreddit);
     const feed = useSelector(selectFeed);
     const dispatch = useDispatch()
 
-    document.getElementsByClassName('subredditName').onClick = function () {
-       alert('On Click works')
-        dispatch(getSubredditPosts())
-    }
+  
     
     useEffect(() => {
     
-        dispatch(getPosts())
+        dispatch(getPosts(selectSelectedSubreddit))
     
     },[dispatch])
 

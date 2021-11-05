@@ -23,7 +23,7 @@ h1{
   font-family: "Brush Script MT";
   text-align: center;
 }
-.subs {
+/* .subs {
   
   position: relative;
   left: 85%;
@@ -33,10 +33,11 @@ h1{
   color: transparent;
   font-size: 40px;
   font-family: Cursive;
-}
+} */
 
 
-/* .content{
+.content{
   display:flex;
   flex-direction: row;
-} */
+  justify-content: space-around;
+}

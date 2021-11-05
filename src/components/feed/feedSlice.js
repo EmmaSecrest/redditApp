@@ -1,11 +1,20 @@
 // import React from "react"
 import { createSlice , createAsyncThunk } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
-import { selectSubreddit } from "../subreddits/subredditSlice";
+import { selectSubreddit , selectSubredditUpdated } from "../subreddits/subredditSlice";
+
 
 export const getPosts = createAsyncThunk('posts/getPosts', 
-async () => {
-    const res = await fetch(`https://www.reddit.com/hot.json`)
+async (argument) => {
+    let res 
+    if (argument !== null){
+         res = await fetch(`https://www.reddit.com/r/${argument}.json`)     
+     } else {
+        res = await fetch(`https://www.reddit.com/hot.json`)
+     }
+    
+    
+    
     const resJson = await res.json();
     
     return resJson.data.children.map(post=> post.data);
@@ -21,8 +30,8 @@ async () => {
 }
 )
 
-const subredditPosts = createAsyncThunk('posts/getSubredditPosts', async () => {
-    const subreddits = useSelector(selectSubreddit)
+const subredditPosts = createAsyncThunk('posts/getSubredditPosts', async (category) => {
+    const subreddits = selectSubredditUpdated(category)
     const res = await fetch(`https://www.reddit.com/r/${subreddits.data.search}.json`)
     const resJson = await res.json();
     return resJson.data.children.map(post=> post.data);

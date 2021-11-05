@@ -13,7 +13,7 @@ function App() {
       {/* search bar will be created here */}
       </nav>
       <div className = 'subreddit-containter'>
-      <h2 className = "subs">Subreddits</h2>
+      
       <div className="content">
       <Feed />
       <Subreddits />
