@@ -17,12 +17,12 @@ async (argument) => {
 }
 )
 export const getComments = createAsyncThunk('comments/getComments', 
-async () => {
+async (subreddit,id) => {
     //adjust this link
-    const res = await fetch(``)
+    const res = await fetch(`https://www.reddit.com/r/${subreddit}/comments/${id}`)
     const resJson = await res.json();
     
-    return resJson.data.children.map(post=> post.data);
+    return resJson.data.children.map(post=> post.data.children.data.replies.data.children);
 }
 )
 
@@ -33,6 +33,7 @@ const feedSlice = createSlice({
     name: 'feed',
     initialState: {
         posts: [],
+        postId: '',
         feed: [
             // {data: {id:1 , subredditId:1,title: 'title 1' ,post: 'post 1'}},
             // {data: {id:2, subredditId:1, title: "title 2" ,post: 'post 2'}},
@@ -57,8 +58,20 @@ const feedSlice = createSlice({
           state.error = false;
           state.posts = action.payload;
         },
-       
-      //add an extra reducer for the comments
+      [getComments.pending] (state,action){
+          state.isLoading = true;
+          state.error = false;
+      } ,
+      [getComments.rejected](state,action){
+          state.isLoading = false ;
+          state.error = true ;
+      },
+      [getComments.fulfilled] (state,action){
+          state.isLoading = false;
+          state.error = false ;
+          state.comments = action.payload;
+      }
+      
     }
     
     
@@ -69,6 +82,7 @@ const feedSlice = createSlice({
  export const isLoading = (state) => state.feed.isLoading
  export const feedError = (state) => state.feed.error
  export const selectFeed = state => state.feed.posts;
- 
+ export const selectPostId = state => state.feed.postId; 
+   
 
 

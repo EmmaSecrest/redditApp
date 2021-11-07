@@ -40,3 +40,13 @@
     color: rgb(23, 165, 130);
     font-weight: 600;
 }
+.comments{
+    font-family: 'Calibri', 'Trebuchet MS', sans-serif;
+    border: rgb(4, 153, 128) 2px ridge ;
+    padding: 1%;
+    background-image: linear-gradient( to bottom right,rgb(32, 172, 130),rgb(53, 94, 182),rgb(122, 20, 122) ) ;
+    opacity: 0.7;
+    border-radius: 20%;
+    color: whitesmoke;
+    
+}

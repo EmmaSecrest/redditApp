@@ -7,6 +7,10 @@ import { getPosts } from "./feedSlice";
 import "./feed.css"
 import '../subreddits/Subreddit'
 import { selectSelectedSubreddit } from "../subreddits/subredditSlice";
+// import CardActionArea from '@material-ui/core/CardActionArea'
+import CardMedia from '@mui/material/CardMedia'
+import { getComments } from "./feedSlice";
+import { selectPostId } from "./feedSlice";
 // import { isLoading } from "./feedSlice";
 // import Subreddits from "../subreddits/Subreddit";
 
@@ -16,12 +20,12 @@ export default function Feed() {
     const feed = useSelector(selectFeed);
     const dispatch = useDispatch()
     const selectedSubreddit = useSelector(selectSelectedSubreddit)
-
+    const postId = useSelector(selectPostId)
   
     
     useEffect(() => {
     
-        console.log(`activating useEffect` + selectedSubreddit)
+        
         dispatch(getPosts(selectedSubreddit))
     
     },[dispatch, selectedSubreddit])
@@ -33,9 +37,11 @@ export default function Feed() {
 
 
 function commentClick(){
-   //place a use effect here for comments
+    dispatch(getComments(selectedSubreddit,postId))
+    
  } 
 
+ 
 
     return (
         
@@ -49,29 +55,47 @@ function commentClick(){
                 {/*less of a space here */}
                 u/{post.author_fullname} <br />
                 {post.selftext? post.selftext: null} <br/>
+                {post.link_flair_text? post.link_flair_text : null } <br/>
                 {post.url? <a href = {post.url} className ='link'>Click me!</a>:null}
                 
-                { post.post_hint === 'image' &&           
+                {/* { post.post_hint === 'image' &&           
                   <img 
                   alt = ''
                   src = {post.url}
                   className = 'image'
                 />
                 }
-                { post.post_hint === 'video' &&           
-                  <video
-                  alt = ''
-                  src = {post.videoUrl}
-                  className = 'image'
-                  controls
-                  autoPlay
-                > video is not supported </video>
-                }
+                {post.videoUrl && <CardMedia 
+                component="video"
+                height="200"
+                autoPlay
+                controls
+                image={post.videoUrl}
+                title={post.title}
+            />} */}
+            
+                {post.videoUrl && <CardMedia 
+                component="video"
+                height="150"
+                autoPlay
+                controls
+                image={post.videoUrl}
+                title={post.title}
+            />}
+            
+            {post.post_hint === 'image' && <CardMedia
+                    component="img"
+                    alt=""
+                    height="auto"
+                    image={post.url}
+                    title={post.title}
+                    />
+                } <br/>
 
 
                 <div className = 'bottom-inline'>
-                Upvotes:{post.ups}
-                <button onClick ={commentClick}>Comments</button>
+                Upvotes: {post.ups}
+                <button onClick = {() => commentClick (post.subreddit,post.id)} className = 'comments' >Comments</button>
                 </div>
 
 
