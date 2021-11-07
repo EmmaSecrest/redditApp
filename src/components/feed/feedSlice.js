@@ -6,11 +6,7 @@ import { createSlice , createAsyncThunk } from "@reduxjs/toolkit";
 export const getPosts = createAsyncThunk('posts/getPosts', 
 async (argument) => {
     let res 
-   
-        // alert('something was Clicked') 
         res = await fetch(`https://www.reddit.com/r/${argument}.json`)     
-     
-        // alert('default chosen')
         const resJson = await res.json();
     
     return resJson.data.children.map(post=> post.data);
@@ -19,10 +15,12 @@ async (argument) => {
 export const getComments = createAsyncThunk('comments/getComments', 
 async (subreddit,id) => {
     //adjust this link
-    const res = await fetch(`https://www.reddit.com/r/${subreddit}/comments/${id}`)
+    const res = await fetch(`https://www.reddit.com/r/${subreddit}/comments/${id}.json`,
+    {mode:'no-cors'} ,
+    )
     const resJson = await res.json();
-    
-    return resJson.data.children.map(post=> post.data.children.data.replies.data.children);
+    // pathway is confusing 
+    return resJson.data.children.map(post=> post.data.children[0].data.replies.data.children);
 }
 )
 
