@@ -13,14 +13,23 @@ async (argument) => {
 }
 )
 export const getComments = createAsyncThunk('comments/getComments', 
-async (subreddit,id) => {
-    //adjust this link
-    const res = await fetch(`https://www.reddit.com/r/${subreddit}/comments/${id}.json`,
-    {mode:'no-cors'} ,
-    )
-    const resJson = await res.json();
-    // pathway is confusing 
-    return resJson.data.children.map(post=> post.data.children[0].data.replies.data.children);
+async (path) => {
+    try {
+        const response = await fetch(`https://www.reddit.com/${path}`)
+        const postsArray = response.data[1].data.children
+        const posts = postsArray.map(item => {
+          return {
+            author: item.data.author,
+            body: item.data.body,
+            id: item.data.id,
+            ups: item.data.ups,
+            created_utc: item.data.created_utc
+          }
+        })
+        return posts
+      } catch (error) {
+        console.log(error)
+      }
 }
 )
 
@@ -31,7 +40,7 @@ const feedSlice = createSlice({
     name: 'feed',
     initialState: {
         posts: [],
-        postId: '',
+        comments: [],
         feed: [
             // {data: {id:1 , subredditId:1,title: 'title 1' ,post: 'post 1'}},
             // {data: {id:2, subredditId:1, title: "title 2" ,post: 'post 2'}},

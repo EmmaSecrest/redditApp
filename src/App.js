@@ -5,6 +5,7 @@ import Subreddits from './components/subreddits/Subreddit';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Search from './components/search/seach';
 
+
 function App() {
   return (
     <div className="App">
@@ -19,7 +20,9 @@ function App() {
       <div className = 'subreddit-containter'>
       
       <div className="content">
+      
       <Feed />
+      
       <Subreddits />
       </div>
       

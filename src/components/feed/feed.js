@@ -1,4 +1,4 @@
-// import React from "react";
+
 import { useSelector , useDispatch} from "react-redux";
 import { useEffect } from "react";
 import { selectFeed } from "./feedSlice";
@@ -10,21 +10,18 @@ import { selectSelectedSubreddit } from "../subreddits/subredditSlice";
 // import CardActionArea from '@material-ui/core/CardActionArea'
 import CardMedia from '@mui/material/CardMedia'
 import { getComments } from "./feedSlice";
-import { selectPostId } from "./feedSlice";
-// import { isLoading } from "./feedSlice";
-// import Subreddits from "../subreddits/Subreddit";
-
 
 export default function Feed() {
     // const subreddits = useSelector(selectSubreddit);
     const feed = useSelector(selectFeed);
     const dispatch = useDispatch()
     const selectedSubreddit = useSelector(selectSelectedSubreddit)
-    const postId = useSelector(selectPostId)
+    
   
     
     useEffect(() => {
     
+        console.log(selectedSubreddit)
         
         dispatch(getPosts(selectedSubreddit))
     
@@ -34,14 +31,6 @@ export default function Feed() {
 
 // if(isLoading) return <div>Loading</div>
 // if(!feed) return null; 
-
-
-function commentClick(){
-    dispatch(getComments(selectedSubreddit,postId))
-    
- } 
-
- 
 
     return (
         
@@ -57,7 +46,7 @@ function commentClick(){
                 {post.selftext? post.selftext: null} <br/>
                 {post.link_flair_text? post.link_flair_text : null } <br/>
                 {post.url? <a href = {post.url} className ='link'>Click me!</a>:null}
-                
+                {/* {console.log(post)} */}
                 {/* { post.post_hint === 'image' &&           
                   <img 
                   alt = ''
@@ -95,7 +84,9 @@ function commentClick(){
 
                 <div className = 'bottom-inline'>
                 Upvotes: {post.ups}
-                <button onClick = {() => commentClick (post.subreddit,post.id)} className = 'comments' >Comments</button>
+                <button onClick = {function(){
+                    dispatch(getComments(post.permalink))
+                }} className = 'comments' >Comments</button>
                 </div>
 
 
