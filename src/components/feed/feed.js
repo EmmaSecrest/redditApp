@@ -1,6 +1,6 @@
 
 import { useSelector , useDispatch} from "react-redux";
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
 import { selectFeed } from "./feedSlice";
 import { getPosts } from "./feedSlice";
 // import {selectSubreddit, subredditsReducer} from '../subreddits/subredditSlice'
@@ -10,14 +10,17 @@ import { selectSelectedSubreddit } from "../subreddits/subredditSlice";
 // import CardActionArea from '@material-ui/core/CardActionArea'
 import CardMedia from '@mui/material/CardMedia'
 import { getComments } from "./feedSlice";
+import { selectComments } from "./feedSlice";
+
 
 export default function Feed() {
     // const subreddits = useSelector(selectSubreddit);
     const feed = useSelector(selectFeed);
     const dispatch = useDispatch()
     const selectedSubreddit = useSelector(selectSelectedSubreddit)
+    const comment = useSelector(selectComments)
     
-  
+   
     
     useEffect(() => {
     
@@ -31,6 +34,26 @@ export default function Feed() {
 
 // if(isLoading) return <div>Loading</div>
 // if(!feed) return null; 
+
+function commentClick (subreddit,id) {
+   
+//    postlink.slice(0,-1)
+    dispatch(getComments(subreddit,id))
+    
+   
+   
+    // return (
+    //     <ul className = 'Comments'>
+    //         {comment.map((comment,index) => <li className = 'comment' key = {index}>
+    //             {comment.data.author_fullname} <br/>
+    //             {comment.data.created_utc}
+    //             {comment.data.body}
+
+    //         </li>)}
+    //     </ul>
+    // )
+
+}
 
     return (
         
@@ -84,9 +107,7 @@ export default function Feed() {
 
                 <div className = 'bottom-inline'>
                 Upvotes: {post.ups}
-                <button onClick = {function(){
-                    dispatch(getComments(post.permalink))
-                }} className = 'comments' >Comments</button>
+                <button onClick = {() =>  commentClick(post.subreddit, post.id) } className = 'comments' >Comments</button>
                 </div>
 
 

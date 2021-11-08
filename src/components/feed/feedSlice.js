@@ -13,13 +13,13 @@ async (argument) => {
 }
 )
 export const getComments = createAsyncThunk('comments/getComments', 
-async (path) => {
+async (subreddit,id) => {
     try {
-        const response = await fetch(`https://www.reddit.com${path}`)
+        const response = await fetch(`https://www.reddit.com/r/${subreddit}/${id}.json`)
         const data =  await response.json
         const [firstItem, secondItem] = data
         const rawComments = secondItem.data.children;
-
+        
         const comments = rawComments.map(item => {
           return {
             author: item.data.author,
@@ -92,7 +92,7 @@ const feedSlice = createSlice({
  export const isLoading = (state) => state.feed.isLoading
  export const feedError = (state) => state.feed.error
  export const selectFeed = state => state.feed.posts;
- export const selectPostId = state => state.feed.postId; 
+ export const selectComments = state => state.feed.comments;
    
 
 
