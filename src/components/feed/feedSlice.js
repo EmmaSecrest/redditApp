@@ -15,9 +15,12 @@ async (argument) => {
 export const getComments = createAsyncThunk('comments/getComments', 
 async (path) => {
     try {
-        const response = await fetch(`https://www.reddit.com/${path}`)
-        const postsArray = response.data[1].data.children
-        const posts = postsArray.map(item => {
+        const response = await fetch(`https://www.reddit.com${path}`)
+        const data =  await response.json
+        const [firstItem, secondItem] = data
+        const rawComments = secondItem.data.children;
+
+        const comments = rawComments.map(item => {
           return {
             author: item.data.author,
             body: item.data.body,
@@ -26,7 +29,7 @@ async (path) => {
             created_utc: item.data.created_utc
           }
         })
-        return posts
+        return comments
       } catch (error) {
         console.log(error)
       }
