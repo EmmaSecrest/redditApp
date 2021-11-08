@@ -13,10 +13,10 @@ async (argument) => {
 }
 )
 export const getComments = createAsyncThunk('comments/getComments', 
-async (subreddit,id) => {
+async ({subreddit,id}) => {
     try {
         const response = await fetch(`https://www.reddit.com/r/${subreddit}/${id}.json`)
-        const data =  await response.json
+        const data =  await response.json()
         const [firstItem, secondItem] = data
         const rawComments = secondItem.data.children;
         

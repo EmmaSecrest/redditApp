@@ -38,7 +38,7 @@ export default function Feed() {
 function commentClick (subreddit,id) {
    
 //    postlink.slice(0,-1)
-    dispatch(getComments(subreddit,id))
+    dispatch(getComments({subreddit,id}))
     
    
    
