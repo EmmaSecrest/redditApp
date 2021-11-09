@@ -12,6 +12,7 @@ import CardMedia from '@mui/material/CardMedia'
 import { getComments } from "./feedSlice";
 import { selectComments } from "./feedSlice";
 
+
 // import { Accordion , useAccordionButton , Card   } from "react-bootstrap";
 
 
@@ -24,6 +25,7 @@ export default function Feed() {
     const selectedSubreddit = useSelector(selectSelectedSubreddit)
     const comments = useSelector(selectComments)
     const [isShowing , setIsShowing] = useState(false)
+    const [postIdToShow , setPostIdToShow] = useState(null)
     
     
     // needs to be styled 
@@ -57,11 +59,11 @@ export default function Feed() {
 function commentClick (subreddit,id){
    
     setIsShowing(!isShowing)
-    
-     console.log(isShowing)
+    setPostIdToShow(id)
+     
     dispatch(getComments({subreddit,id}))
     
-     if(isShowing === true) {
+     if(isShowing === true ) {
        
         
         return displayedComments
@@ -72,6 +74,13 @@ function commentClick (subreddit,id){
 
      
 }
+function showCommentsForThisPost (id) {
+ if (postIdToShow === id){
+     return true
+ } else{
+     return false
+ }
+}
 
 
 
@@ -79,15 +88,33 @@ function commentClick (subreddit,id){
     return (
         
         <section>
-
+            {console.log(feed)}
             <ul className = 'posts'>
         {feed.map((post, index) => (
             <li className = 'feed'key = {index} >
                 r/{post.subreddit}<br/>
                 <h2>{post.title}</h2>
-                {/*less of a space here */}
+                
                 u/{post.author_fullname} <br />
-                {post.selftext? post.selftext: null} <br/>
+                <ul>{post.selftext? post.selftext: null} <br/> </ul>
+                {post.preview? post.preview.images.map((post,index) => (<li className = 'preview' key = {index}> 
+                    {post.post_hint === 'image' && <CardMedia
+                    component="img"
+                    alt=""
+                    height="auto"
+                    image={post.url}
+                    title={post.title}
+                    />
+                }
+                  {post.videoUrl && <CardMedia 
+                component="video"
+                height="150"
+                autoPlay
+                controls
+                image={post.videoUrl}
+                title={post.title}
+            />}
+                </li>)) : null }
                 {post.link_flair_text? post.link_flair_text : null } <br/>
                 {post.url? <a href = {post.url} className ='link'>Click me!</a>:null}
                 
@@ -117,7 +144,7 @@ function commentClick (subreddit,id){
                 <button onClick = {() =>  commentClick(post.subreddit, post.id) } className = 'comments' >Comments</button>
                 
                 </div>
-                {isShowing && displayedComments}
+                {showCommentsForThisPost(post.id) && isShowing && displayedComments}
 
             </li>
 
