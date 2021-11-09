@@ -3,7 +3,8 @@ import './App.css';
 import Feed from './components/feed/feed';
 import Subreddits from './components/subreddits/Subreddit';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Search from './components/search/seach';
+import SearchBar from './components/search/seach';
+
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <h1 style ={{fontSize :'60px'}}>Deep Dive</h1>
       </div>
       <div className = 'search'>
-       <Search />
+       <SearchBar />
        </div>
       </nav>
       <div className = 'subreddit-containter'>

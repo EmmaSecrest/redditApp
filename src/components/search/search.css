@@ -1,3 +1,12 @@
 input{
     border: rgb(235, 107, 150) 2px dashed;
 }
+.searchButton{
+    position: relative;
+    left: 791px;
+    bottom: 29px;
+    background-image: linear-gradient( to bottom right,rgb(32, 172, 130),rgb(53, 94, 182),rgb(122, 20, 122) ) ;
+    opacity: 0.6;
+    color: white;
+    border-radius: 5px;
+}
