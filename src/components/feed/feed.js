@@ -25,12 +25,14 @@ export default function Feed() {
     const comments = useSelector(selectComments)
     const [isShowing , setIsShowing] = useState(false)
     
+    
+    // needs to be styled 
     const displayedComments = 
         <ul className = 'comment'>
         {comments.map((comment,index) => (
             <li> 
-                {comment.author}
-                {comment.body}
+               <h3 className = 'author'> {comment.author} </h3>
+                <p>{comment.body} </p> 
             </li>
         ))}
            
@@ -60,11 +62,11 @@ function commentClick (subreddit,id){
     dispatch(getComments({subreddit,id}))
     
      if(isShowing === true) {
-        console.log("Im here")
+       
         
         return displayedComments
     } else {
-        console.log('now I am here')
+       
         return null;
     }
 
@@ -113,9 +115,9 @@ function commentClick (subreddit,id){
                 Upvotes: {post.ups}
                
                 <button onClick = {() =>  commentClick(post.subreddit, post.id) } className = 'comments' >Comments</button>
-                {isShowing && displayedComments}
+                
                 </div>
-
+                {isShowing && displayedComments}
 
             </li>
 
