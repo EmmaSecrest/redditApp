@@ -4,11 +4,11 @@ import { isLoading } from "../feed/feedSlice";
 export const getSearchResults = createAsyncThunk('search/getSearchResults',
 async (argument) =>{
 let response;
-response = await fetch(`https://www.reddit.com/search/?q=${argument}&type=sr%2Cuser&restrict_sr=on.json`)
+response = await fetch(`http://www.reddit.com/search.json?q=${argument}`)
 const responseJson = await response.json();
 
 console.log(responseJson)
-return responseJson
+return responseJson.data.children.map(results => results.data)
 }
 )
 
