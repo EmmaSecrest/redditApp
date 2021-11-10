@@ -3,10 +3,14 @@ input{
 }
 .searchButton{
     position: relative;
-    left: 791px;
+    left: 792px;
     bottom: 29px;
     background-image: linear-gradient( to bottom right,rgb(32, 172, 130),rgb(53, 94, 182),rgb(122, 20, 122) ) ;
     opacity: 0.6;
     color: white;
     border-radius: 5px;
+    cursor: pointer;
+}
+.flexboxMe{
+    display: flex;
 }

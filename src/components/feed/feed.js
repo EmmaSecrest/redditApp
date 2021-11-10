@@ -88,7 +88,7 @@ function showCommentsForThisPost (id) {
     return (
         
         <section>
-            {console.log(feed)}
+            
             <ul className = 'posts'>
         {feed.map((post, index) => (
             <li className = 'feed'key = {index} >
