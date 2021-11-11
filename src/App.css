@@ -61,7 +61,14 @@ border-radius: 3%;
       flex-direction: column;
       justify-content: space-around;
     }
-
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
+    }
 }
 
 /* Portrait */
@@ -74,6 +81,14 @@ border-radius: 3%;
       display:flex;
       flex-direction: column;
       justify-content: space-around;
+    }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
     }
   }
 
@@ -88,6 +103,15 @@ border-radius: 3%;
       flex-direction: column;
       justify-content: space-around;
     }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
+    }
+
 }
 
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
@@ -101,6 +125,14 @@ border-radius: 3%;
       display:flex;
       flex-direction: column;
       justify-content: space-around;
+    }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
     }
 
 }
@@ -116,6 +148,14 @@ border-radius: 3%;
       flex-direction: column;
       justify-content: space-around;
     }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
+    }
 }
 
 /* Landscape */
@@ -128,6 +168,14 @@ border-radius: 3%;
       display:flex;
       flex-direction: column;
       justify-content: space-around;
+    }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
     }
 
 }
@@ -144,6 +192,14 @@ border-radius: 3%;
       flex-direction: column;
       justify-content: space-around;
     }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
+    }
 
 }
 
@@ -158,6 +214,14 @@ border-radius: 3%;
       flex-direction: column;
       justify-content: space-around;
     }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
+    }
 
 }
 
@@ -171,6 +235,14 @@ border-radius: 3%;
       display:flex;
       flex-direction: column;
       justify-content: space-around;
+    }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
     }
 }
 
@@ -186,6 +258,14 @@ border-radius: 3%;
       flex-direction: column;
       justify-content: space-around;
     }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
+    }
 
 }
 
@@ -200,6 +280,14 @@ border-radius: 3%;
       flex-direction: column;
       justify-content: space-around;
     }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
+    }
 
 }
 
@@ -213,6 +301,14 @@ border-radius: 3%;
       display:flex;
       flex-direction: column;
       justify-content: space-around;
+    }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
     }
 
 }
@@ -229,6 +325,15 @@ border-radius: 3%;
       flex-direction: column;
       justify-content: space-around;
     }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
+    }
+    
 
 }
 
@@ -243,6 +348,14 @@ border-radius: 3%;
       flex-direction: column;
       justify-content: space-around;
     }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
+    }
 }
 
 /* Landscape */
@@ -255,6 +368,14 @@ border-radius: 3%;
       display:flex;
       flex-direction: column;
       justify-content: space-around;
+    }
+    nav{
+      display: flex;
+      flex-direction: column;
+    }
+    .search{
+      display: flex;
+      justify-self: center;
     }
 
 }
