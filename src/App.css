@@ -3,7 +3,7 @@
   background-image: url('./resources/mermaidBackground.jpeg') ;
   background-size: cover;
   background-position: top;
-  min-height: 100%;
+  min-height: 300%;
   height: 150vh;
   position: relative;
 }
