@@ -66,8 +66,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 }
 
@@ -87,8 +87,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
   }
 
@@ -108,8 +108,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 
 }
@@ -131,8 +131,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 
 }
@@ -153,8 +153,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 }
 
@@ -174,8 +174,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 
 }
@@ -197,8 +197,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 
 }
@@ -219,8 +219,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 
 }
@@ -241,8 +241,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 }
 
@@ -263,8 +263,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 
 }
@@ -285,8 +285,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 
 }
@@ -307,8 +307,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 
 }
@@ -330,8 +330,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
     
 
@@ -353,8 +353,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 }
 
@@ -374,8 +374,8 @@ border-radius: 3%;
       flex-direction: column;
     }
     .search{
-      display: flex;
-      justify-self: center;
+      position: relative;
+      right: 10%;
     }
 
 }
