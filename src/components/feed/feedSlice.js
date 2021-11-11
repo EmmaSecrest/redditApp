@@ -17,8 +17,8 @@ async ({subreddit,id}) => {
     try {
         const response = await fetch(`https://www.reddit.com/r/${subreddit}/${id}.json`)
         const data =  await response.json()
-        const [firstItem, secondItem] = data
-        const rawComments = secondItem.data.children;
+        const  secondItems = data
+        const rawComments = secondItems.data.children;
         
         const comments = rawComments.map(item => {
           return {
@@ -32,6 +32,7 @@ async ({subreddit,id}) => {
         return comments
       } catch (error) {
         console.log(error)
+        return 
       }
 }
 )
