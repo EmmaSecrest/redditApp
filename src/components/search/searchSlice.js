@@ -1,5 +1,5 @@
 import { createSlice , createAsyncThunk } from "@reduxjs/toolkit";
-import { isLoading } from "../feed/feedSlice";
+
 
 export const getSearchResults = createAsyncThunk('search/getSearchResults',
 async (argument) =>{
