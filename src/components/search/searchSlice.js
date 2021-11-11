@@ -7,7 +7,7 @@ let response;
 response = await fetch(`http://www.reddit.com/search.json?q=${argument}`)
 const responseJson = await response.json();
 
-console.log(responseJson)
+// console.log(responseJson.data.children)
 return responseJson.data.children.map(results => results.data)
 }
 )

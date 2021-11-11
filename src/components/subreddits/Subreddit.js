@@ -15,7 +15,7 @@ export default function Subreddits(){
    const subreddits = useSelector(selectSubreddit)
     const dispatch = useDispatch()
     const subredditClick = function (category){
-        
+       
         dispatch(selectSubredditUpdated(category))
     }
 

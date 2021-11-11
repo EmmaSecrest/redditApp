@@ -3,7 +3,7 @@ input{
 }
 .searchButton{
     position: relative;
-    left: 792px;
+    left: 37%;
     bottom: 29px;
     background-image: linear-gradient( to bottom right,rgb(32, 172, 130),rgb(53, 94, 182),rgb(122, 20, 122) ) ;
     opacity: 0.6;
