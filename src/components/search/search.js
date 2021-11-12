@@ -36,8 +36,8 @@ export default function SearchBar(){
                 <Dropdown.Toggle className = 'searchButton' >See Results</Dropdown.Toggle>
                 <Dropdown.Menu className = 'dropdown'>
                   {results.map((result,index) => (
-                      <Dropdown.Item key ={index} >
-                          <h6 onClick = {() => {searchClick(result.subreddit)}}>{result.subreddit}</h6>
+                      <Dropdown.Item key ={index} onClick = {() => {searchClick(result.subreddit)}}>
+                          <h6 >{result.subreddit}</h6>
                           {result.title}
                       </Dropdown.Item>
                   ))}
