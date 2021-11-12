@@ -4,7 +4,7 @@ import { createSlice , createAsyncThunk } from "@reduxjs/toolkit";
 export const getSearchResults = createAsyncThunk('search/getSearchResults',
 async (argument) =>{
 let response;
-response = await fetch(`http://www.reddit.com/search.json?q=${argument}`)
+response = await fetch(`https://www.reddit.com/search.json?q=${argument}`)
 const responseJson = await response.json();
 
 // console.log(responseJson.data.children)
