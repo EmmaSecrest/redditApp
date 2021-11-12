@@ -10,14 +10,14 @@ import SearchBar from './components/search/search';
 function App() {
   return (
     <div className="App">
-     
+     <nav>
       <div className = 'textBackground'>
       <h1 style ={{fontSize :'60px'}}>Deep Dive</h1>
       </div>
       <div className = 'search'>
        <SearchBar />
        </div>
-      
+      </nav>
       <div className = 'subreddit-containter'>
       
       <div className="content">
