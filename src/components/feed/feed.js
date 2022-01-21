@@ -82,9 +82,10 @@ export default function Feed() {
           ) : null}
           {post.preview
             ? post.preview.images.map((post, index) => (
-                <li className="preview" key={index}>
+                <div className="preview" key={index}>
                   {post.post_hint === "image" && (
-                    <CardMedia
+                  <CardMedia
+                    variant="outlined"
                       component="img"
                       alt=""
                       height="auto"
@@ -102,7 +103,7 @@ export default function Feed() {
                       title={post.title}
                     />
                   )}
-                </li>
+                </div>
               ))
             : null}
           <br />
@@ -121,6 +122,7 @@ export default function Feed() {
               component="img"
               alt=""
               height="auto"
+              width="50%"
               image={post.url}
               title={post.title}
             />

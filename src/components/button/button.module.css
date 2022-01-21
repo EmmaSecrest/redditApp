@@ -1,4 +1,4 @@
-button {
+.button {
     width: 100%;
     display: block;
     border: none;
@@ -16,17 +16,17 @@ button {
     -moz-appearance: none;
 }
 
-button:hover,
-button:focus {
+.button:hover,
+.button:focus {
     background: #539ce4;
     color: white;
 }
 
-button:focus {
+.button:focus {
     outline: 1px solid #fff;
     outline-offset: -4px;
 }
 
-button:active {
+.button:active {
     transform: scale(0.99);
 }
