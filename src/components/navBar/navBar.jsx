@@ -6,7 +6,7 @@ const NavBar = () => {
   const [width, setWidth] = useState()
   useEffect(() => {
   setWidth(window.innerWidth)
-  })
+  },[])
 
   return (
     <nav className={styles.NavBar}>
