@@ -5,7 +5,9 @@ import App from './App/App'
 import reportWebVitals from './reportWebVitals';
 import { store } from './store';
 import { Provider } from 'react-redux';
-import { persistStore, persistReducer } from 'redux-persist';
+
+
+
 
 
 ReactDOM.render(
