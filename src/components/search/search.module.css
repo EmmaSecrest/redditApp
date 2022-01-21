@@ -1,0 +1,18 @@
+.dropdown {
+    display: flex;
+    flex-direction: row;
+    max-width: fit-content;
+    height: 40px;
+}
+
+input{
+    border: rgb(235, 107, 150) 2px dashed;
+    max-width: fit-content;
+    margin-right: 12px;
+}
+
+.searchButton{
+    color: white;
+    cursor: pointer;
+    max-width: fit-content;
+}

@@ -1,8 +1,6 @@
 // import React from "react"
 import { createSlice , createAsyncThunk } from "@reduxjs/toolkit";
 
-
-
 export const getPosts = createAsyncThunk('posts/getPosts', 
 async (argument) => {
     let res 

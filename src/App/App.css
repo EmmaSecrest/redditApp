@@ -1,0 +1,23 @@
+section {
+  display: flex;
+  flex-direction: row;
+  margin: 0 12px;
+}
+
+@media only screen and (max-width: 600px) {
+section {
+  flex-direction: column-reverse;
+}
+
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+
+/*
+WRITE ALL YOUR FONTS HERE
+WRITE ALL YOUR COLOURS HERE
+WRITE EVERYTHING THAT IS INCLUDED IN ALL OF THE APP HERE
+*/
