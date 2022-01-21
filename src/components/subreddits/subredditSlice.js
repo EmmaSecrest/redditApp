@@ -31,8 +31,7 @@ const subredditSlice = createSlice({
     ],
     error: false,
     isLoading: false,
-    selectedSubreddit:{data: {id:0,name: "Home", search:'news'}}
-
+    selectedSubreddit: "news" 
     },
     reducers:{
         addSubreddit(state,action){

@@ -6,7 +6,7 @@ import { createSlice , createAsyncThunk } from "@reduxjs/toolkit";
 export const getPosts = createAsyncThunk('posts/getPosts', 
 async (argument) => {
     let res 
-        res = await fetch(`https://www.reddit.com/r/${argument}.json`)     
+        res = await fetch(`/r/${argument}.json`)     
         const resJson = await res.json();
     
     return resJson.data.children.map(post=> post.data);
@@ -15,7 +15,7 @@ async (argument) => {
 export const getComments = createAsyncThunk('comments/getComments', 
 async ({subreddit,id}) => {
     try {
-        const response = await fetch(`https://www.reddit.com/r/${subreddit}/${id}.json`)
+        const response = await fetch(`/r/${subreddit}/${id}.json`)
         const data =  await response.json()
        
         const  [firstItem,secondItems] = data
