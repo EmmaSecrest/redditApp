@@ -1,4 +1,4 @@
-import "./search.css";
+import styles from './search.module.css'
 import { useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import { getSearchResults } from "./searchSlice";
@@ -26,7 +26,7 @@ export default function SearchBar() {
     <div>
       <Dropdown>
         <div>
-          <div className="dropdown">
+          <div className={styles.dropdown}>
             <input
               id="searchbar"
               type="text"
@@ -34,7 +34,7 @@ export default function SearchBar() {
               onChange={handleTermChange}
               onKeyPress={search}
             />
-            <Dropdown.Toggle className="searchButton">
+            <Dropdown.Toggle className={styles.searchButton}>
               See Results
             </Dropdown.Toggle>
           </div>

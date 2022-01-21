@@ -1,10 +1,12 @@
 .posts {
-  list-style: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .feed {
     margin: 10px 0;
     border: 1px solid lightgrey;
+    padding: 8px;
 }
 
 .bottom-inline {
@@ -15,7 +17,6 @@
 .image {
   max-height: 500px;
   border: black 1px solid;
-  margin-left: 10%;
   max-width: 300px;
 }
 .link {

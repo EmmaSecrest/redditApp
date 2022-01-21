@@ -13,7 +13,7 @@ export default function Subreddits() {
   return (
     <section className="subreddit-container">
       <h3>Suggested Subreddits</h3>
-      <div className="subreddit-container">
+      <div>
         {Object.values(subreddits).map((sub) => (
           <button
             className="sub"

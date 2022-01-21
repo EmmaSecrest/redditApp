@@ -3,6 +3,7 @@
     flex-direction: column;
     min-width: fit-content;
     padding: 12px 0;
+    margin: 0 auto;
 }
 .sub:hover {
     background-color: lightgrey;

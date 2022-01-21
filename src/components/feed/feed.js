@@ -64,81 +64,74 @@ export default function Feed() {
   }
 
   return (
-    <section>
-      <ul className="posts">
-        {feed.map((post, index) => (
-          <li className="feed" key={index}>
-            r/{post.subreddit}
-            <br />
-            <h4>{post.title}</h4>
-            u/{post.author_fullname} <br />
-            <ul>
-              {post.selftext ? `${post.selftext.substring(0, 300)}...` : null} <br />{" "}
-            </ul>
-            {post.preview
-              ? post.preview.images.map((post, index) => (
-                  <li className="preview" key={index}>
-                    {post.post_hint === "image" && (
-                      <CardMedia
-                        component="img"
-                        alt=""
-                        height="auto"
-                        image={post.url}
-                        title={post.title}
-                      />
-                    )}
-                    {post.videoUrl && (
-                      <CardMedia
-                        component="video"
-                        height="150"
-                        autoPlay
-                        controls
-                        image={post.videoUrl}
-                        title={post.title}
-                      />
-                    )}
-                  </li>
-                ))
-              : null}
-            {post.link_flair_text ? post.link_flair_text : null} <br />
-            {post.url ? (
-              <a href={post.url} className="link">
-                Click me!
-              </a>
-            ) : null}
-            {post.videoUrl && (
-              <CardMedia
-                component="video"
-                height="150"
-                autoPlay
-                controls
-                image={post.videoUrl}
-                title={post.title}
-              />
-            )}
-            {post.post_hint === "image" && (
-              <CardMedia
-                component="img"
-                alt=""
-                height="auto"
-                image={post.url}
-                title={post.title}
-              />
-            )}{" "}
-            <br />
-            <div className="bottom-inline">
-              Upvotes: {post.ups}
-              <button
-                onClick={() => commentClick(post.subreddit, post.id)}
-                className="comments"
-              >
-                Comments
-              </button>
-            </div>
-            {showCommentsForThisPost(post.id) && isShowing && displayedComments}
-          </li>
-        ))}
-      </ul>
+    <section className="posts">
+      {feed.map((post, index) => (
+        <div className="feed" key={index}>
+          r/{post.subreddit} | u/{post.author_fullname} |{" "}
+          {post.link_flair_text ? post.link_flair_text : null}
+          <br />
+          <h4>{post.title}</h4>
+          {post.selftext ? `${post.selftext.substring(0, 300)}...` : null}{" "}
+          {post.url ? (
+            <a href={post.url} className="link">
+              Read The Full Article
+            </a>
+          ) : null}
+          {post.preview
+            ? post.preview.images.map((post, index) => (
+                <li className="preview" key={index}>
+                  {post.post_hint === "image" && (
+                    <CardMedia
+                      component="img"
+                      alt=""
+                      height="auto"
+                      image={post.url}
+                      title={post.title}
+                    />
+                  )}
+                  {post.videoUrl && (
+                    <CardMedia
+                      component="video"
+                      height="150"
+                      autoPlay
+                      controls
+                      image={post.videoUrl}
+                      title={post.title}
+                    />
+                  )}
+                </li>
+              ))
+            : null}
+          <br />
+          {post.videoUrl && (
+            <CardMedia
+              component="video"
+              height="150"
+              autoPlay
+              controls
+              image={post.videoUrl}
+              title={post.title}
+            />
+          )}
+          {post.post_hint === "image" && (
+            <CardMedia
+              component="img"
+              alt=""
+              height="auto"
+              image={post.url}
+              title={post.title}
+            />
+          )}{" "}
+          <br />
+          <div className="bottom-inline">
+            Upvotes: {post.ups}
+            <button onClick={() => commentClick(post.subreddit, post.id)}>
+              Comments
+            </button>
+          </div>
+          {showCommentsForThisPost(post.id) && isShowing && displayedComments}
+        </div>
+      ))}
     </section>
   );
 }
