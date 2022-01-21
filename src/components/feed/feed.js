@@ -67,15 +67,18 @@ export default function Feed() {
     <section className="posts">
       {feed.map((post, index) => (
         <div className="feed" key={index}>
-          r/{post.subreddit} | u/{post.author_fullname} |{" "}
-          {post.link_flair_text ? post.link_flair_text : null}
+          r/{post.subreddit} | u/
+          {post.author_fullname ? `${post.author_fullname}` : ""}
+          {post.link_flair_text ? ` | ${post.link_flair_text}` : null}
           <br />
           <h4>{post.title}</h4>
           {post.selftext ? `${post.selftext.substring(0, 300)}...` : null}{" "}
           {post.url ? (
-            <a href={post.url} className="link">
-              Read The Full Article
-            </a>
+            <div>
+              <a href={post.url} className="link">
+                Read The Full Article
+              </a>
+            </div>
           ) : null}
           {post.preview
             ? post.preview.images.map((post, index) => (
@@ -122,7 +125,6 @@ export default function Feed() {
               title={post.title}
             />
           )}{" "}
-          <br />
           <div className="bottom-inline">
             Upvotes: {post.ups}
             <button onClick={() => commentClick(post.subreddit, post.id)}>
