@@ -91,7 +91,7 @@ function showCommentsForThisPost (id) {
             
             <ul className = 'posts'>
         {feed.map((post, index) => (
-            <li className = 'feed'key = {index} >
+            <li className = 'feed' key = {index} >
                 r/{post.subreddit}<br/>
                 <h2>{post.title}</h2>
                 

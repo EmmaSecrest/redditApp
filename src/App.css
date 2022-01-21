@@ -65,10 +65,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
 }
 
 /* Portrait */
@@ -86,10 +83,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
   }
 
 /* Landscape */
@@ -107,10 +101,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
 
 }
 
@@ -130,10 +121,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+   
 
 }
 
@@ -152,10 +140,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
 }
 
 /* Landscape */
@@ -173,10 +158,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
 
 }
 
@@ -196,10 +178,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
 
 }
 
@@ -218,10 +197,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
 
 }
 
@@ -239,11 +215,9 @@ border-radius: 3%;
     nav{
       display: flex;
       flex-direction: column;
+      align-self: center;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
@@ -284,10 +258,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
 
 }
 
@@ -306,10 +277,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
 
 }
 
@@ -329,10 +297,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
     
 
 }
@@ -352,10 +317,7 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
 }
 
 /* Landscape */
@@ -373,9 +335,6 @@ border-radius: 3%;
       display: flex;
       flex-direction: column;
     }
-    .search{
-      position: relative;
-      right: 150px;
-    }
+    
 
 }
