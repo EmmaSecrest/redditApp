@@ -37,12 +37,8 @@ export default function Feed() {
   useEffect(() => {
     // console.log(selectedSubreddit);
     dispatch(getPosts(selectedSubreddit));
-    localStorage.setItem("selectedSubreddit" , selectedSubreddit)
-    
-  }, [dispatch, selectedSubreddit]);
+    }, [dispatch, selectedSubreddit]);
 
-  // if(isLoading) return <div>Loading</div>
-  // if(!feed) return null;
 
   function commentClick(subreddit, id) {
     setIsShowing(!isShowing);
