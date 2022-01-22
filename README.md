@@ -1,5 +1,7 @@
 # Reddit App : Deep Dive 
 This application pulls information from reddit to make it easy to look at the post given and search for certian posts
+
+CSS done by : LoukasGP
 ## created with 
 1.React
 2.Redux
